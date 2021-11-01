@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Difference between undefined and not defined.</title>
+    </head>
+    <body>
+        
+        <p>Undefined - It is a JavaScript keyword that has a special meaning. Everything which gets a space in memory will contain undefined until we assign a value to that memory space.</p>
+        <p>The global execution context will be created and in the memory allocation phase, the var a will get space in memory, and JavaScript will assign undefined to it. During the thread of execution, the JavaScript will encounter the first line console.log(a) and as we haven’t assigned the value for a, undefined will be printed on the console. In the next line, we have assigned 2 to a, hence the variable a is no more undefined. Now it contains the value 5. So next time whenever we access the variable a, it won’t be evaluated as undefined. So it will print the actual value of a.</p>
+        <script>
+            console.log(a);
+            var a = 2;
+            console.log(a);
+        </script>
+        
+        <p>Not defined - In JavaScript, it is one of the reference errors that JavaScript will throw when someone accesses the variable which is not inside the memory heap.</p>
+        <p>First of all, global execution context will be created and in the memory allocation phase, the variable “x” will get space in memory, and by default, JavaScript assigns undefined to “x”. During the thread of execution, the “console.log(a)” will be printed as undefined. In the next line, we have assigned 10 to variable x. In the console, 10 will be printed. At the last line when JavaScript encounters the “console.log(y)” it searches for “y” inside the memory heap of execution context but it is not available, the JS engine will throw the “Reference Error” with a message of “y is not defined“. The JavaScript will stop execution when it encounters a reference error.</p>
+        <script>
+          console.log(x);
+          var x = 10;
+          console.log(x);
+          console.log(y);
+        </script>
+    </body>
+</html>
